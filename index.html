@@ -1,0 +1,251 @@
+<html><head><base href="https://www.example.com"/>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background: #000000;
+        padding: 15px;
+    }
+
+    .window {
+        background: #1c1c1e;
+        border-radius: 16px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.4);
+        width: 100%;
+        max-width: 500px; /* Reduced from 600px */
+        padding: 15px; /* Reduced from 20px */
+        border: 1px solid #333;
+    }
+
+    .header {
+        background: #2c2c2e;
+        color: white;
+        padding: 12px; /* Reduced from 15px */
+        border-radius: 12px;
+        margin: -15px -15px 15px -15px;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Reduced from 20px */
+    }
+
+    @media (min-width: 768px) {
+        .content-wrapper {
+            flex-direction: row;
+        }
+    }
+
+    .data-grid {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 8px; /* Reduced from 12px */
+        margin-bottom: 8px;
+        width: 100%;
+        font-size: 0.95em; /* Slightly smaller font */
+    }
+
+    .label {
+        font-weight: 500;
+        color: #86868b;
+        min-width: 110px; /* Reduced from 120px */
+    }
+
+    .value {
+        color: #ffffff;
+        word-break: break-word;
+    }
+
+    .separator {
+        border-bottom: 1px solid #333;
+        margin: 8px 0;
+    }
+    
+    .photo {
+        width: 100px; /* Reduced from 120px */
+        height: 120px; /* Reduced from 140px */
+        border: 2px solid #ff1493;
+        margin: 0 auto;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .loading-text {
+        text-align: center;
+        margin-top: 15px; /* Reduced from 20px */
+        color: #ff1493;
+        font-weight: 500;
+        font-size: 0.95em;
+    }
+
+    .status-container {
+        background: #2c2c2e;
+        padding: 12px; /* Reduced from 15px */
+        border-radius: 12px;
+        margin-top: 8px; /* Reduced from 10px */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .status-text {
+        color: #32d74b;
+        font-weight: 500;
+        font-size: 1em; /* Reduced from 1.1em */
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .status-text::before {
+        content: "✓";
+        background: #32d74b;
+        color: black;
+        width: 18px; /* Reduced from 20px */
+        height: 18px; /* Reduced from 20px */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9em;
+        flex-shrink: 0;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 5px; /* Reduced from 6px */
+        background-color: #2c2c2e;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-top: 8px;
+    }
+
+    .progress {
+        width: 80%;
+        height: 100%;
+        background-color: #ff1493;
+        border-radius: 3px;
+        animation: loading 1.5s ease-in-out infinite;
+    }
+
+    @keyframes loading {
+        0% { opacity: 1; }
+        50% { opacity: 0.6; }
+        100% { opacity: 1; }
+    }
+
+    h2 {
+        font-size: 1.2em; /* Reduced from default */
+        margin: 0;
+    }
+
+    @media (max-width: 480px) {
+        .window {
+            padding: 12px;
+        }
+        
+        .header {
+            padding: 10px;
+            margin: -12px -12px 12px -12px;
+        }
+
+        .status-container {
+            padding: 10px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="window">
+        <div class="header">
+            <h2>Sistema EduHack.pe</h2>
+        </div>
+
+        <div class="content-wrapper">
+            <img src="https://i.ibb.co/TKbSDgV/descarga-2.png" class="photo" alt="Foto de identificación"/>
+            
+            <div class="data-grid">
+                <div class="label">DNI:</div>
+                <div class="value">72561938 - 9</div>
+
+                <div class="label">Nombres:</div>
+                <div class="value">VALERIA XENIA</div>
+
+                <div class="label">Apellido Paterno:</div>
+                <div class="value">QUISPE</div>
+
+                <div class="label">Apellido Materno:</div>
+                <div class="value">ROJAS</div>
+
+                <div class="label">Padre:</div>
+                <div class="value">JUAN</div>
+
+                <div class="label">Madre:</div>
+                <div class="value">MARCOSA</div>
+
+                <div class="label">Teléfono:</div>
+                <div class="value">+51 907 305 155</div>
+
+                <div class="label">Dirección:</div>
+                <div class="value">LIMA - LIMA - VILLA EL SALVADOR - SECTOR 1 GRUPO 18 MZ. A LT. 12</div>
+
+                <div class="label">Origen:</div>
+                <div class="value">LIMA - LIMA - JESUS MARIA</div>
+
+                <div class="label">S/N:</div>
+                <div class="value">Admitida</div>
+
+                <div class="label">Fecha Nacimiento:</div>
+                <div class="value">05/05/2004</div>
+
+                <div class="label">Edad:</div>
+                <div class="value">20 años, 7 meses y 8 días</div>
+
+                <div class="label">Fecha Emisión:</div>
+                <div class="value">03/09/2023</div>
+
+                <div class="label">Fecha inscripción:</div>
+                <div class="value">04/10/2008</div>
+
+                <div class="label">Fecha Caducidad:</div>
+                <div class="value">01/09/2031</div>
+
+                <div class="label">Grado Instrucción:</div>
+                <div class="value">SECUNDARIA COMPLETA</div>
+
+                <div class="label">Estatura:</div>
+                <div class="value">1.54 ( Tamaño Hormiga )</div>
+
+                <div class="label">Restricción:</div>
+                <div class="value">NINGUNA</div>
+            </div>
+        </div>
+
+        <div class="loading-text">Modificación Subiendo 80%</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="status-container">
+            <div class="status-text">Pago Cancelado</div>
+            <div style="color: #ffffff; font-weight: 500;">S/ 50.00</div>
+        </div>
+        <div class="status-container">
+            <div class="status-text">MODIFICACIÓN UCSUR - 007VALE</div>
+        </div>
+        <div class="status-container">
+            <div class="status-text">TELEFONO USADO</div>
+            <div style="color: #ffffff; font-weight: 500;">iPhone 15 Pro Max</div>
+        </div>
+        <div class="status-container">
+            <div class="status-text">IMEI</div>
+            <div style="color: #ffffff; font-weight: 500;">87103771640136 - 7</div>
+        </div>
+    </div>
+</body></html>
